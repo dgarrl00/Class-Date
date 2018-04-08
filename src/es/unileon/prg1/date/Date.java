@@ -66,7 +66,7 @@ public class Date {
 		 this.day == another.getDay();
 	}
 	public boolean isSame(Date another){
-		if (( this.year == another.getYear() ) && (this.month==another.getMonth()) && (this.day==another.getDay()) {
+		if (( this.year == another.getYear() ) && (this.month==another.getMonth()) && (this.day==another.getDay())) {
 			return true;
 		}
 		return false;
@@ -86,6 +86,41 @@ public class Date {
 		shownameMonth(1);
 		
 	break;
+	case 2:
+		showNameMonth(2);
+	break;
+	case 3: 
+		showNameMonth(3);
+	break;
+	case 4:
+		showNameMonth(4);
+	break;
+	case 5: 
+		showNameMonth(5);
+	break;
+	case 6: 
+		showNameMonth(6);
+	break;
+	case 7: 
+		showNameMonth(7);
+	break;
+	case 8: 
+		showNameMonth(8);
+	break;
+	case 9: 
+		showNameMonth(9);
+	break;
+	case 10: 
+		showNameMonth(10);
+	break;
+	case 11: 
+		showNameMonth(11);
+	break;
+	case 12: 
+		showNameMonth(12);
+	break;
+	}
+	
 
 
 
@@ -99,9 +134,44 @@ public class Date {
 	switch(month){
 	case 1:
 		
-		System.out.println("Mes: enero ");
+		System.out.println("Mes: Enero ");
 		
 	break;
+	case 2:
+		System.out.println("Mes: Febrero ");
+	break;
+	case 3:
+		System.out.println("Mes: Marzo ");
+	break;
+	case 4:
+		System.out.println("Mes: Abril ");
+	break;
+	case 5: 
+		System.out.println("Mes: Mayo ");
+	case 6:
+		System.out.println("Mes: Junio ");
+	break;
+	case 7:
+		System.out.println("Mes: Julio ");
+	break;
+	case 8:
+		System.out.println("Mes: Agosto ");
+	break;
+	case 9:
+		System.out.println("Mes: Septiembre ");
+	break;
+	case 10:
+		System.out.println("Mes: Octubre ");
+	break;
+	case 11:
+		System.out.println("Mes: Noviembre ");
+	break;
+	case 12:
+		System.out.println("Mes: Diciembre ");
+	break;
+	}
+
+	
 
 
 
@@ -129,12 +199,17 @@ public class Date {
 		
 	break;
 	case 2:
-		if (bisiesto())
-		return this.day>=1 && this.day<=29;
+		if (bisiesto()){
+			return this.day>=1 && this.day<=29;
+		}
+		else{
+			return this.day>=1 && this.day<=28;
+		}
+		
 	break;
 	
 	 case 4: case 6: case 9: case 11:
- 		return this.day>=1 && this.day<=30
+ 		return this.day>=1 && this.day<=30;
 	break;
 	
 
@@ -145,7 +220,7 @@ public class Date {
 	}
 	}
 	private boolean bisiesto(){
-		if (year%4==0)&&(year%100!=0)||(year%400==0){
+		if ((year%4==0)&&(year%100!=0)||(year%400==0)){
 			return true;
 		}
 		else{
@@ -154,11 +229,21 @@ public class Date {
 	}
 	
 	public String nameSeason(){
-		String season;
+		
 	
 	switch (this.month){
 	case 12: case 1: case 2: case 3:
-		season= "invierno";
+		System.out.println(" Estacion: Invierno ");
+	break;
+	case 4: case 5: case 6: 
+		System.out.println(" Estacion: Primavera ");
+	break;
+	
+	case 7: case 8: case 9:
+		System.out.println(" Estacion: Verano ");
+	break;
+	case 10: case 11:
+		System.out.println(" Estacion: Otoño ");
 	break;
 	}
 	}
@@ -176,11 +261,11 @@ public class Date {
 	}
 	public void showAllDate(){
 		for(int i=getDay();i<=daysOfMonth(getMonth());i++){
-			System.out.println("dia: "+i+"month: "+getMonth()+"year: 	"+getYear() ;
+			System.out.println("Dia: "+i+"month: "+getMonth()+"year: 	"+getYear() );
 	}
 
 
-}
+	}
 	private int daysOfMonth(int month){
 		switch(month){  //o getMonth()
 	
@@ -191,29 +276,32 @@ public class Date {
 	break;
 	case 2:
 		if (bisiesto())
-		return 29;
+			return 29;
 		else 
+			return 28;
 	break;
 	
 	 case 4: case 6: case 9: case 11:
- 		return 30
+ 		return 30;
 	break;
+	}
 	}
 	
 	public void sameDays(){
+	
 		switch(this.month){  //o getMonth()
 	
-	case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
 		
-		System.out.println("Enero,Marzo,...");
+			System.out.println("Meses con el mismo numero de dias: Enero, marzo, mayo, junio, agosto, octubre, diciembre");
 		
-	break;
+		break;
 	
 	
-	case 4: case 6: case 9: case 11:
- 		s.o.p.
-	break;
-	}
+		case 4: case 6: case 9: case 11:
+ 			System.out.println("Meses con el mismo numero de dias: Abril, julio, septiembre, noviembre ");
+		break;
+		}
 	}
 	
 	public int numberOfDays(){
@@ -231,10 +319,10 @@ public class Date {
 			
 			
 	
-	}	
-
-
-
+		
 
 	}
+
+
+	
 	

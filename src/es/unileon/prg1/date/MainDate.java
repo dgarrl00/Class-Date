@@ -9,12 +9,17 @@ public class MainDate {
 		System.out.println(today.toString() + " isSameYear " + tomorrow.toString() + "? " + today.isSameYear(tomorrow));
 		System.out.println(today.toString() + " isSameMonth " + tomorrow.toString() + " ? " + today.isSameMonth(tomorrow));
 		System.out.println(today.toString() + " isSameDay " + tomorrow.toString() + "? " + today.isSameDay(tomorrow));
+		System.out.println(today.toString() + " isSame " + tomorrow.toString() + " ? " + today.isSame(tomorrow));
 
 		today.nameMonth();
+		today.nameSeason();
 	
 		System.out.println(" isValidDay " + " ? " + today.isValidDay());
 		today.showMonths();
 		today.showDate();
+		today.showAllDates();
+		today.sameDays();
+		today.numberOfDays();
 
 
 }
