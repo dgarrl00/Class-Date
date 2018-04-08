@@ -22,8 +22,8 @@ public class Date {
 		return this.year;
 	}
 
-	public boolean isSameYear(Date another){
-		if ( this.year == another.getYear() ){
+	 public boolean isSameYear(Date another){ 
+		if ( this.year == another.getYear() ){ 
 			return true;
 		}
 		return false;
@@ -314,13 +314,76 @@ public class Date {
 		counter=counter + getDay();
 		return counter;
 	}
+	
+	public int numberOfAttemps1(){
+		int counter=0;
+		Random aleatorio=new Random();
+		do{
+			int otherDay=aleatorio.nextInt(31)+1;
+			int otherMonth=aleatorio.nextInt(12)+1;
+			counter=counter +1;
+		}while((otherDay!=getDay()) || (otherMonth!=getMonth()));
+		return counter;
+	}
+	public int numberOfAttemps2(){
+		int counter=1;
+		Random aleatorio=new Random();
+		int otherDay=aleatorio.nextInt(31)+1;
+		int otherMonth=aleatorio.nextInt(12)+1;
+		while((otherDay!=getDay()) || (otherMonth!=getMonth())){
+			
+			
+			otherDay=aleatorio.nextInt(31)+1;
+			otherMonth=aleatorio.nextInt(12)+1;
+			counter=counter +1;
+		}
+		return counter;
+	}
+	
+	public int whatDayIs(int dayWeek){ // en qué cae el primer dia del año (1-lunes)
+		int days =numberOfDays();
+		int whatDayIs= days % 7;
+		int numberDay=(whatDayIs + dayWeek -1) %7;
+		switch(numberDay){
+		case 0:
+			System.out.println(" Lunes ");
+		break;
+		case 1:
+			System.out.println(" Martes ");
+		break;
+		case 2:
+			System.out.println(" Miercoles ");
+		break;
+		case 3:
+			System.out.println(" Jueves ");
+		break;
+		case 4:
+			System.out.println(" Viernes ");
+		break;
+		case 5:
+			System.out.println(" Sabado ");
+		break;
+		case 6:
+			System.out.println(" Domingo ");
+		break;
+		
+		
+		
+		
+		
+
+
+
+
+
+	}
 
 			
 			
 			
 	
 		
-
+	}
 	}
 
 
