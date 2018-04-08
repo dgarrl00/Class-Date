@@ -1,4 +1,5 @@
 package es.unileon.prg1.date;
+import java.util.Random;
 
 public class Date {
 	private int day;
@@ -22,50 +23,50 @@ public class Date {
 		return this.year;
 	}
 
-	 public boolean isSameYear(Date another){ 
+	 public boolean isSameYear1(Date another){ 
 		if ( this.year == another.getYear() ){ 
 			return true;
 		}
 		return false;
 		//return this.year == another.getYear();
 	}
-	public boolean isSameYear(Date another){
+	public boolean isSameYear2(Date another){
 		return this.year==another.getYear();
 
 
 
 	}
-	public boolean isSameMonth(Date another){
+	public boolean isSameMonth1(Date another){
 		if( this.month==another.getMonth()){
 			return true;
 		}
 
 		return false;
 	}
-	public boolean isSameMonth(Date another){
+	public boolean isSameMonth2(Date another){
 		return this.month==another.getMonth();
 
 
 
 
 	}
-	public boolean isSameDay(Date another){
+	public boolean isSameDay1(Date another){
 		if( this.day==another.getDay()){
 			return true;
 		}
 		return false;
 	}
-	public boolean isSameDay(Date another){
+	public boolean isSameDay2(Date another){
 		return this.day==another.getDay();
 
 
 	}
-	public boolean isSame(Date another){
+	public boolean isSame1(Date another){
 		return this.year == another.getYear()&&
 		 this.month == another.getMonth()&&
 		 this.day == another.getDay();
 	}
-	public boolean isSame(Date another){
+	public boolean isSame2(Date another){
 		if (( this.year == another.getYear() ) && (this.month==another.getMonth()) && (this.day==another.getDay())) {
 			return true;
 		}
@@ -83,7 +84,7 @@ public class Date {
 	switch(this.month){   //el valor del atributo del objeto que llame al metodo
 	case 1:
 		
-		shownameMonth(1);
+		showNameMonth(1);
 		
 	break;
 	case 2:
@@ -129,7 +130,7 @@ public class Date {
 
 
 	}
-	private void  shownameMonth(int month){ 
+	private void  showNameMonth(int month){ 
 	
 	switch(month){
 	case 1:
@@ -196,8 +197,8 @@ public class Date {
 	case 1: case 3: case 5: case 7: case 8: case 10: case 12:
 		
 		return this.day>=1 && this.day<=31;
-		
-	break;
+	
+	
 	case 2:
 		if (bisiesto()){
 			return this.day>=1 && this.day<=29;
@@ -206,11 +207,11 @@ public class Date {
 			return this.day>=1 && this.day<=28;
 		}
 		
-	break;
+	
 	
 	 case 4: case 6: case 9: case 11:
  		return this.day>=1 && this.day<=30;
-	break;
+	
 	
 
 
@@ -250,7 +251,7 @@ public class Date {
 
 	public String showMonths(){
 		for(int i=getMonth(); i<=12; i++){
-			shownameMonth(i);
+			showNameMonth(i);
 		}
 
 
@@ -273,17 +274,17 @@ public class Date {
 		
 		return 31;
 		
-	break;
+	
 	case 2:
 		if (bisiesto())
 			return 29;
 		else 
 			return 28;
-	break;
+	
 	
 	 case 4: case 6: case 9: case 11:
  		return 30;
-	break;
+	
 	}
 	}
 	
@@ -317,13 +318,17 @@ public class Date {
 	
 	public int numberOfAttemps1(){
 		int counter=0;
-		Random aleatorio=new Random();
+		Random aleatorio;
+		aleatorio= new Random();
+		int otherDay;
+		int otherMonth;
 		do{
-			int otherDay=aleatorio.nextInt(31)+1;
-			int otherMonth=aleatorio.nextInt(12)+1;
+			 otherDay=aleatorio.nextInt(31)+1;
+			 otherMonth=aleatorio.nextInt(12)+1;
 			counter=counter +1;
 		}while((otherDay!=getDay()) || (otherMonth!=getMonth()));
 		return counter;
+		
 	}
 	public int numberOfAttemps2(){
 		int counter=1;
@@ -342,8 +347,8 @@ public class Date {
 	
 	public int whatDayIs(int dayWeek){ // en qué cae el primer dia del año (1-lunes)
 		int days =numberOfDays();
-		int whatDayIs= days % 7;
-		int numberDay=(whatDayIs + dayWeek -1) %7;
+		int whatRestIs= days % 7;
+		int numberDay=(whatRestIs + dayWeek -1) %7;
 		switch(numberDay){
 		case 0:
 			System.out.println(" Lunes ");
@@ -376,7 +381,7 @@ public class Date {
 
 
 
-	}
+		}
 
 			
 			
